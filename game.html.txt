@@ -1,0 +1,30 @@
+html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Colorful Blinking Text</title>
+  <style>
+    #text {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="startBlinking()">ボタンを押して点滅開始</button>
+  <p id="text">Hello world</p>
+
+  <script>
+    function startBlinking() {
+      var textElement = document.getElementById('text');
+      var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+      var currentColorIndex = 0;
+
+      setInterval(function() {
+        textElement.style.color = colors[currentColorIndex];
+        currentColorIndex = (currentColorIndex + 1) % colors.length;
+      }, 500);
+    }
+  </script>
+</body>
+</html>
